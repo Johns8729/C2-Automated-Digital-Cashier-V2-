@@ -1,3 +1,4 @@
+#RETIRO
 elif Opcion == 2:
         try:
             monto_retirar = int(input("\ningrese el monto a retirar: "))
