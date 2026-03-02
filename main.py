@@ -11,4 +11,4 @@ for i in range (Cant_Operaciones) :
     Opcion = int(input(f"\n --------------- Menú Principal --------------- | #{Conteo}  \n 1) Consultar saldo \n 2) Retirar dinero \n 3) Depositar dinero \n 4) Finalizar\n==================================================\n Seleccione una opción \n ➤ "))
     while Opcion < 1 or Opcion > 4:
         print("\nERROR: Por favor ingrese una opción válida")
-        Opcion = int(input(f"\n --------------- Menú Principal --------------- | #{Conteo}  \n 1) Consultar saldo \n 2) Retirar dinero \n 3) Depositar dinero \n 4) Finalizar \n==================================================\n ➤ "))
+        Opcion = int(input(f"\n --------------- Menú Principal --------------- | #{Conteo}  \n 1) Consultar saldo \n 2) Retirar dinero \n 3) Depositar dinero \n 4) Finalizar \n==================================================\n Seleccione una opción \n ➤ "))
