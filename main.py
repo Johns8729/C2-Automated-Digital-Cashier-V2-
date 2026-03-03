@@ -12,10 +12,10 @@ while True:
             print("Autenticación exitosa, puede continuar al menú principal.")
             break
         else:
-            print("PIN incorrecto. Inténtelo de nuevo.")
+            print("\nPIN incorrecto. Inténtelo de nuevo.\n")
 
 #Espacio para la Feature: attemtps control draft
 
     except ValueError:
-        print("Error: El PIN debe ser un número entero!")
+        print("\nError: El PIN debe ser un número entero!\n")
         
