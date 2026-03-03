@@ -1,5 +1,5 @@
 # CONDICIONES DE RETIRO
-
+'''
 def VALIDACION_RETIRO(saldo, monto):
     if monto <= 0:
         return False, "El monto debe ser mayor que cero!."
@@ -8,7 +8,7 @@ def VALIDACION_RETIRO(saldo, monto):
     if monto > 1000:
         return False, "Supera el limite permitido!."
     return True, "Retiro valido"
-
+'''
 
 # CONDICIONES DE DEPOSITO
 
