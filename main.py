@@ -1,4 +1,3 @@
-saldo = 1000
 pin_correcto = 1234
 intentos = 0
 max_intentos = 3
@@ -25,6 +24,5 @@ while intentos < max_intentos:
         print("="*60)
 else:
     print ("programa suspendido. Porfavor vuelva a intentar en las proximas 24h.")
-    
 
         
