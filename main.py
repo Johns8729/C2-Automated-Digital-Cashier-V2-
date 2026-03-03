@@ -1,19 +1,15 @@
 saldo = 100
-limite_diario_retiro=2000
+limite_diario_retiro=800 
 retiro_diario=0
-monto=0
-try:
-    monto =float(monto)
-    if retiro_diario + monto > limite_diario_retiro:
-        disponible = limite_diario_retiro-retiro_diario
-        print(f"limite diario excedido. disponible hoy: ",disponible)
-        
+elif Opcion == 2:
+    monto_retirar = int(input("\ningrese el monto a retirar: "))
 
-    saldo -= monto
-    retiro_diario += monto
-    print(f"✓ Retiro exitoso: ${monto:.2f}")
-    print(f"Saldo actual: ${saldo:.2f}")
+    if retiro_diario+monto_retirar > limite_diario_retiro:
+     print("Usted ha excedido el límite diario de retiro.")
     
-
-except ValueError:
-    print("✗ Monto inválido")
+    else:
+        print("limite diario disponible hoy: ", limite_diario_retiro)
+        saldo -= monto_retirar
+        retiro_diario += monto_retirar
+        print(F"\nRetiro exitoso. Su nuevo saldo actualizado es de: {saldo}\n")
+        print("\nGracias por usar el cajero automático")
