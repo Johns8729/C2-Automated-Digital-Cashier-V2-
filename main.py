@@ -1,9 +1,9 @@
 saldo = 1000
+
 print("="*50)
-print(f"{'🏦 BANCO DYMADOM':^50}")
+print(f"{'🏦 TECH BANK RIWI DIGITAL':^50}")
 print("-"*50)
 print(f"{'🙌¡Bienvenido al Cajero Automático!🙌':^50}")
-print(f"saldo actual: ${saldo}")
 print("-"*50)
 Cant_Operaciones = int(input(f"{'¿Cuántas operaciones desea realizar?':^50}"))
 for i in range (Cant_Operaciones) :
