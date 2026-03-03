@@ -7,15 +7,15 @@ pin = 1234
 
 while True:
     try:
-        user_pin = int(input("Por favor, ingrese su PIN de autenticación para continuar: "))
+        user_pin = int(input("~ Por favor, ingrese su PIN de autenticación para continuar:\n⮞ "))
         if user_pin == pin:
-            print("Autenticación exitosa, puede continuar al menú principal.")
+            print("~ Autenticación exitosa, puede continuar al menú principal.")
             break
         else:
-            print("\nPIN incorrecto. Inténtelo de nuevo.\n")
+            print(f"{"="*60}\nPIN incorrecto. Inténtelo de nuevo.\n{"="*60}")
 
-#Espacio para la Feature: attemtps control draft
+# Espacio para la Feature: attemtps control draft
 
     except ValueError:
-        print("\nError: El PIN debe ser un número entero!\n")
+        print(f"{"="*60}\nError: El PIN debe ser un número entero!\n{"="*60}")
         
