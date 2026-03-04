@@ -14,6 +14,6 @@ print("\nHistorial de operaciones:")
 if historial == "":
     print("No se realizaron operaciones")
 else:
-    print("---------------------------------")
+    print("--------------------------------")
     print(f"=========={historial}==========")
-    print("---------------------------------")
+    print("--------------------------------")
