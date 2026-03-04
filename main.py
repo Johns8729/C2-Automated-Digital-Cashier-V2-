@@ -7,7 +7,7 @@ sesion_activa = False
 intentos = 0 
 cuenta_1 = 1234
 
-cuenta_1 = input("Ingrese su Nombr de Usuario: ")
+cuenta_1 = input("Ingrese su Nombrede Usuario: ")
 
 # Lo siguiente le tocaria a la persona de autenticacion
 
