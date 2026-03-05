@@ -19,4 +19,4 @@ limite_diario_retiro=800
 retiro_diario=0
 monto = 0
 historial = ""
-cuenta_1 = input("🤵 Ingrese su Nombre de Usuario: ")
+cuenta_1 = input("🤵Ingrese su Nombre de Usuario: ")
