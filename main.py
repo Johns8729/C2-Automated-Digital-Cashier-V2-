@@ -1,13 +1,37 @@
-# CONFIGURACION INICIAL, VAMOS A DETERMINAR LAS VARIABLES 
-print("BIENVENIDO AL CAJERO ATM TECH BANK RIWI DIGITAL")
-saldo =  1000
-pint_correcto = 1234
-intentos_maximos = 3 
-sesion_activa = False
-intentos = 0 
-cuenta_1 = 1234
+#(Jafet) FUNCION MENU
+from time import sleep
+welcome = """
+╔════════════════════════════════════════════════════════════╗
+                🏦 TECH BANK RIWI DIGITAL 🏦
+            🙌¡Bienvenido al Cajero Automático!🙌
+╚════════════════════════════════════════════════════════════╝
+    """
+for _ in welcome:
+    print(_,end="",flush=True)
+    sleep(0.005)
 
-cuenta_1 = input("Ingrese su Nombrede Usuario: ")
+Cant_Operaciones = int(input(f"{'¿Cuántas operaciones desea realizar?':^55}"))
+while Cant_Operaciones <= 0:
+    print (f"\n{'❌ Error: Ingrese un valor positivo ❌':^65}\n")
+    Cant_Operaciones = int(input(f"{'¿Cuántas operaciones desea realizar?':^65}"))
 
-# Lo siguiente le tocaria a la persona de autenticacion
-
+for i in range (Cant_Operaciones) :
+    Conteo = i + 1
+    Opcion = int(input(f"""--------------- Menú Principal --------------- | #{Conteo} 
+1) 🔍 Consultar saldo 
+2) 💳 Retirar dinero 
+3) 💰 Depositar dinero 
+4) ✅ Finalizar
+==================================================
+Seleccione una opción:
+➤ """))       
+    while Opcion < 1 or Opcion > 4:
+        print("\nERROR: Por favor ingrese una opción válida")
+        Opcion = int(input(f"""--------------- Menú Principal --------------- | #{Conteo} 
+1) 🔍 Consultar saldo 
+2) 💳 Retirar dinero 
+3) 💰 Depositar dinero 
+4) ✅ Finalizar
+==================================================
+Seleccione una opción:
+➤ """))
