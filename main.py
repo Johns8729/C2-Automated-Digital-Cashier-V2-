@@ -1,19 +1,8 @@
-# CONDICIONES DE RETIRO
-'''
-def VALIDACION_RETIRO(saldo, monto):
-    if monto <= 0:
-        return False, "El monto debe ser mayor que cero!."
-    if monto > saldo:
-        return False, "Fondos insuficientes!."
-    if monto > 1000:
-        return False, "Supera el limite permitido!."
-    return True, "Retiro valido"
-'''
+# CONDICIONES VALIDACION DE RETIRO
 
-# CONDICIONES DE DEPOSITO
+while monto_retirar <= 0:
+    monto_retirar = int(input("El monto a retirar debe ser mayor que cero.Ingrese un nuevo monto: "))
 
-def VALIDACION_DEPOSITO(monto):
-    if monto <= 0:
-        return False, "No se permiten montos negativos o cero"
-    return True, "Depòsito Valido!."
-
+    if monto_retirar > saldo:   
+        print("✗ Fondos insuficientes.saldo actual: ", saldo)
+            continue
