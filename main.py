@@ -1,3 +1,22 @@
+import datetime
+import time
+saldo = 2000
+limite_diario_retiro=500
+retiro_diario=0
+
+print("="*50)
+print(f"{'🏦 TECH BANK RIWI DIGITAL':^50}")
+print("-"*50)
+print(f"{'🙌¡Bienvenido al Cajero Automático!🙌':^50}")
+print("-"*50)
+Cant_Operaciones = int(input(f"{'¿Cuántas operaciones desea realizar?':^50}"))
+for i in range (Cant_Operaciones) :
+    Conteo = i + 1
+    Opcion = int(input(f"\n --------------- Menú Principal --------------- | #{Conteo}  \n 1) 🔍 Consultar saldo \n 2) 💳 Retirar dinero \n 3) 💰 Depositar dinero \n 4) ✅ Finalizar\n==================================================\n Seleccione una opción \n ➤ "))
+    while Opcion < 1 or Opcion > 4:
+        print("\nERROR: Por favor ingrese una opción válida")
+        Opcion = int(input(f"\n --------------- Menú Principal --------------- | #{Conteo}  \n 1) 🔍 Consultar saldo \n 2) 💳 Retirar dinero \n 3) 💰 Depositar dinero \n 4) ✅ Finalizar \n==================================================\n Seleccione una opción \n ➤ "))   
+        
     if Opcion == 2:
         while True:    
             try:
@@ -5,4 +24,7 @@
 
                 saldo -= monto_retirar
                 print(F"\nRetiro exitoso. Su nuevo saldo actualizado es de: {saldo}\n")
-                
+                break
+
+            except ValueError:
+                print("✗ Monto inválido, ingrese un valor numerico")
