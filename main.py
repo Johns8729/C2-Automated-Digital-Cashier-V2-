@@ -1,9 +1,7 @@
-<<<<<<< HEAD
-=======
 import datetime
 import time
 saldo = 2000
-limite_diario_retiro=1500
+limite_diario_retiro=500
 retiro_diario=0
 
 print("="*50)
@@ -31,6 +29,7 @@ for i in range (Cant_Operaciones) :
 
 
     if Opcion == 2:
+        while True:    
             try:
                 monto_retirar = int(input("\ningrese el monto a retirar: "))
              
@@ -53,12 +52,16 @@ for i in range (Cant_Operaciones) :
                 print(F"\nRetiro exitoso. Su nuevo saldo actualizado es de: {saldo}\n")
                 print("limite  disponible hoy: ", limite_diario_retiro-retiro_diario)
                 print("\nGracias por usar el cajero automático")
-                
+                break
 
             except ValueError:
-                print("✗ Monto inválido")
+                print("✗ Monto inválido, ingrese un valor numerico")
+            
+                    
+                
+            
                 
                     
                 
             
->>>>>>> 625547d8c031fe9fabc24e9999dcc3b04046ed55
+
