@@ -1,5 +1,7 @@
 #(Jafet) FUNCION MENU
 from time import sleep
+import datetime
+import time
 welcome = """
 ╔════════════════════════════════════════════════════════════╗
                 🏦 TECH BANK RIWI DIGITAL 🏦
@@ -97,12 +99,33 @@ if Opcion == 1:
 if Opcion == 2:
     while True:    
         try:
-            monto_retirar = int(input("\ningrese el monto a retirar: "))
+            monto_retirar = int(input("\nIngrese el monto a retirar: "))
 
-            saldo -= monto_retirar
+              
+            if retiro_diario+monto_retirar > limite_diario_retiro:
+                   disponible = limite_diario_retiro-retiro_diario
+                   print(f"✗ Límite diario de retiro excedido. Disponible hoy: ${disponible:.2f}")
+                   continue  
+            
+            saldo -= monto_retirar    
+            retiro_diario += monto_retirar
+            fecha_actual = datetime.date.today()
+            hora_actual = time.strftime("%H:%M:%S")
+            print("fecha: ",fecha_actual)
+            print("hora: ",hora_actual)
             print(F"\nRetiro exitoso. Su nuevo saldo actualizado es de: {saldo}\n")
+            print("limite  disponible hoy: ", limite_diario_retiro-retiro_diario)
+            print("\nGracias por usar el cajero automático")
             break
-
         except ValueError:
             print("✗ Monto inválido, ingrese un valor numerico")
- 
+         
+            
+                    
+                
+            
+                
+                    
+                
+            
+
