@@ -29,6 +29,30 @@ monto = 0
 historial = ""
 cuenta_1 = input("🤵Ingrese su Nombre de Usuario: ")
 
+"""Feature: Athentication Process
+Made by: Oscar Corzo
+Date: 2026-03-05"""
+
+pin_correcto = 1234
+intentos = 0
+max_intentos = 3
+
+while intentos < max_intentos:
+    try:
+        user_pin = int(input("~ Por favor, ingrese su PIN de autenticación para continuar:\n➤ "))
+
+
+
+
+        
+    except:
+        print("RESOLVER PROBLEMA AQUI")#-------------------------------------------------------------------------> PROBLEMA (ESTE EXCEPT ARREGLARLO, NO EXISTIA, YO LO COLOQUE)
+
+
+
+
+
+
 Cant_Operaciones = int(input(f"{'¿Cuántas operaciones desea realizar?':^55}"))
 while Cant_Operaciones <= 0:
     print (f"\n{'❌ Error: Ingrese un valor positivo ❌':^65}\n")
@@ -54,5 +78,6 @@ Seleccione una opción:
 ==================================================
 Seleccione una opción:
 ➤ """))
+
 
 
