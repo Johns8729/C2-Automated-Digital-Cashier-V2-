@@ -6,3 +6,11 @@ while monto_retirar <= 0:
     if monto_retirar > saldo:   
         print("✗ Fondos insuficientes.saldo actual: ", saldo)
             continue
+    
+    # CONDICIONES VALIDACION DE DEPOSITO
+
+      def VALIDACION_DEPOSITO(monto):
+                        if monto <= 0:
+                            return False, "No se permiten montos negativos o cero"
+                        return True, "Depòsito Valido!."
+
