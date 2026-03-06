@@ -77,24 +77,33 @@ while Cant_Operaciones <= 0:
 
 for i in range (Cant_Operaciones) :
     Conteo = i + 1
-    Opcion = int(input(f"""--------------- Menú Principal --------------- | #{Conteo} 
-1) 🔍 Consultar saldo 
-2) 💳 Retirar dinero 
-3) 💰 Depositar dinero 
-4) ✅ Finalizar
-==================================================
-Seleccione una opción:
-➤ """))       
-    while Opcion < 1 or Opcion > 4:
-        print("\nERROR: Por favor ingrese una opción válida")
-        Opcion = int(input(f"""--------------- Menú Principal --------------- | #{Conteo} 
-1) 🔍 Consultar saldo 
-2) 💳 Retirar dinero 
-3) 💰 Depositar dinero 
-4) ✅ Finalizar
-==================================================
-Seleccione una opción:
-➤ """))
+    Opcion= 0
+    while Opcion <= 0:
+        try:              
+            Opcion = int(input(f"""--------------- Menú Principal --------------- | #{Conteo} 
+        1) 🔍 Consultar saldo 
+        2) 💳 Retirar dinero 
+        3) 💰 Depositar dinero 
+        4) ✅ Finalizar
+        ==================================================
+        Seleccione una opción:
+        ➤ """)) 
+            if Opcion <=0:
+                print(f"\n{'❌ Error: Ingrese un valor positivo ❌':^65}\n")  
+
+            if Opcion < 1 or Opcion > 4:
+                print("\nERROR: Por favor ingrese una opción válida")
+                Opcion = int(input(f"""--------------- Menú Principal --------------- | #{Conteo} 
+        1) 🔍 Consultar saldo 
+        2) 💳 Retirar dinero 
+        3) 💰 Depositar dinero 
+        4) ✅ Finalizar
+        ==================================================
+        Seleccione una opción:
+        ➤ """))
+                
+        except ValueError:
+            print("Error: Ingrese un número entero válido.")
 
     if Opcion == 1:
 
@@ -137,10 +146,11 @@ Seleccione una opción:
             while True:
                 try:
                     cantidad = int(input("Ingrese la cantidad a depositar: "))
-                    def VALIDACION_DEPOSITO(monto):
-                            if monto <= 0: #-----------------------------------------------------------> AQUI NO ENTRA Y NO SE COMO FUNCIONA ESO
-                                return False, "No se permiten montos negativos o cero"
-                            return True, "Depòsito Valido!."
+                    
+                    if cantidad <= 0:  # bug corregido BY: JOSEPH ROMERO - el codigo original tenia "cantidad < 0" lo cual permitia depositar $0. Se corrigio a "<=0" para rechazar tambien el valor cero
+                         print("Error: Ingrese un valor positivo.")
+                         continue
+
                     saldo = saldo + cantidad
                     historial = historial + "💰 Depósito de $" + str(cantidad) + "\n"
                     print(f"\nSu nuevo saldo es de: ${saldo}")
