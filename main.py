@@ -8,8 +8,7 @@ welcome = """
             🙌¡Bienvenido al Cajero Automático!🙌
 ╚════════════════════════════════════════════════════════════╝
     """
-# CONFIGURACION INICIAL, VAMOS A DETERMINAR LAS VARIABLES 
-from time import sleep
+# CONFIGURACION INICIAL, VAMOS A DETERMINAR LAS VARIABLES
 welcome = """
 ╔════════════════════════════════════════════════════════════╗
     🏦 BIENVENIDO AL CAJERO ATM TECH BANK RIWI DIGITAL 🏦 
@@ -31,9 +30,9 @@ monto = 0
 historial = ""
 cuenta_1 = input("🤵Ingrese su Nombre de Usuario: ")
 
-"""Feature: Athentication Process
-Made by: Oscar Corzo
-Date: 2026-03-05"""
+# """Feature: Athentication Process
+# Made by: Oscar Corzo
+# Date: 2026-03-05"""
 
 pin_correcto = 1234
 intentos = 0
@@ -89,56 +88,57 @@ Seleccione una opción:
 Seleccione una opción:
 ➤ """))
 
-if Opcion == 1:
+    if Opcion == 1:
 
-            print("Tu saldo actual es: ", saldo )
-            print("-"*30)
-            print("\n")
-            historial = historial + "🔍 Consultó saldo\n"    #-------------------------------> NO SE PARA QUE FUNCIONA O NO AUN
-        
-if Opcion == 2:
-    while True:    
-        try:
-            monto_retirar = int(input("\nIngrese el monto a retirar: "))
-            while monto_retirar <= 0:
-                 monto_retirar = int(input("El monto a retirar debe ser mayor que cero.Ingrese un nuevo monto: "))
-
-            if monto_retirar > saldo:   
-                print("✗ Fondos insuficientes.saldo actual: ", saldo)
-                continue
-              
-            if retiro_diario+monto_retirar > limite_diario_retiro:
-                   disponible = limite_diario_retiro-retiro_diario
-                   print(f"✗ Límite diario de retiro excedido. Disponible hoy: ${disponible:.2f}")
-                   continue  
+                print("Tu saldo actual es: ", saldo )
+                print("-"*30)
+                print("\n")
+                historial = historial + "🔍 Consultó saldo\n"    #-------------------------------> NO SE PARA QUE FUNCIONA O NO AUN
             
-            saldo -= monto_retirar    
-            retiro_diario += monto_retirar
-            fecha_actual = datetime.date.today()
-            hora_actual = time.strftime("%H:%M:%S")
-            print("fecha: ",fecha_actual)
-            print("hora: ",hora_actual)
-            print(F"\nRetiro exitoso. Su nuevo saldo actualizado es de: {saldo}\n")
-            print("limite  disponible hoy: ", limite_diario_retiro-retiro_diario)
-            print("\nGracias por usar el cajero automático")
-            break
-        except ValueError:
-            print("✗ Monto inválido, ingrese un valor numerico")
-         
-#breyner funcion depositar
-elif Opcion == 3:
-        while True:
+    if Opcion == 2:
+        while True:    
             try:
-                cantidad = int(input("Ingrese la cantidad a depositar: "))
-                def VALIDACION_DEPOSITO(monto):
-                        if monto <= 0:
-                            return False, "No se permiten montos negativos o cero"
-                        return True, "Depòsito Valido!."
-                saldo = saldo + cantidad
-                historial = historial + "💰 Depósito de $" + str(cantidad) + "\n"
-                print(f"\nSu nuevo saldo es de: ${saldo}")
-                print("\nGracias por usar el cajero automático")
+                monto_retirar = int(input("\nIngrese el monto a retirar: "))
+                while monto_retirar <= 0:
+                    monto_retirar = int(input("El monto a retirar debe ser mayor que cero.Ingrese un nuevo monto: "))
+
+                if monto_retirar > saldo:   
+                    print("✗ Fondos insuficientes.saldo actual: ", saldo)
+                    continue
+                
+                if retiro_diario+monto_retirar > limite_diario_retiro:
+                    disponible = limite_diario_retiro-retiro_diario
+                    print(f"✗ Límite diario de retiro excedido. Disponible hoy: ${disponible:.2f}")
+                    continue  
+                
+                saldo -= monto_retirar    
+                retiro_diario += monto_retirar
+                fecha_actual = datetime.date.today()
+                hora_actual = time.strftime("%H:%M:%S")
+                print("fecha: ",fecha_actual)
+                print("hora: ",hora_actual)
+                print(F"\nRetiro exitoso. Su nuevo saldo actualizado es de: {saldo}\n")
+                print("limite  disponible hoy: ", limite_diario_retiro-retiro_diario)
+                
                 break
             except ValueError:
-                print("Error: Ingrese un número entero válido.")
+                print("✗ Monto inválido, ingrese un valor numerico")
+            
+    #breyner funcion depositar
+    elif Opcion == 3:
+            while True:
+                try:
+                    cantidad = int(input("Ingrese la cantidad a depositar: "))
+                    def VALIDACION_DEPOSITO(monto):
+                            if monto <= 0: #-----------------------------------------------------------> AQUI NO ENTRA
+                                return False, "No se permiten montos negativos o cero"
+                            return True, "Depòsito Valido!."
+                    saldo = saldo + cantidad
+                    historial = historial + "💰 Depósito de $" + str(cantidad) + "\n"
+                    print(f"\nSu nuevo saldo es de: ${saldo}")
+                    
+                    break
+                except ValueError:
+                    print("Error: Ingrese un número entero válido.")
+print("\nGracias por usar el cajero automático")
 
