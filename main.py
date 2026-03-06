@@ -1,4 +1,4 @@
-#(Jafet) FUNCION MENU
+#Yardelis - Configuracion inicial
 from time import sleep
 import datetime
 import time
