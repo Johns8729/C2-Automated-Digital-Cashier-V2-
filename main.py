@@ -158,5 +158,8 @@ for i in range (Cant_Operaciones) :
                     break
                 except ValueError:
                     print("Error: Ingrese un número entero válido.")
+    elif Opcion == 4:
+                    print("Sesión finalizada. Gracias por usar el cajero.") # bug corregido BY: JOSEPH ROMERO - la opcion 4 no tenia funcion, ahora finaliza la sesion correctamente
+                    break
 print("\nGracias por usar el cajero automático")
 
