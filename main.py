@@ -62,10 +62,18 @@ else:
     print ("programa suspendido. Porfavor vuelva a intentar en las proximas 24h.")
     exit ()
 
-Cant_Operaciones = int(input(f"{'¿Cuántas operaciones desea realizar?':^55}"))
+Cant_Operaciones = 0
 while Cant_Operaciones <= 0:
-    print (f"\n{'❌ Error: Ingrese un valor positivo ❌':^65}\n")
-    Cant_Operaciones = int(input(f"{'¿Cuántas operaciones desea realizar?':^65}"))
+    try:
+        Cant_Operaciones= int(input (f"\n{'Cuantas operaciones desea realizar?':^65}\n"))
+
+        if Cant_Operaciones <=0:
+             print(f"\n{'❌ Error: Ingrese un valor positivo ❌':^65}\n")
+
+    except ValueError:
+         print("Error: Ingrese un número entero válido.")
+         
+         
 
 for i in range (Cant_Operaciones) :
     Conteo = i + 1
@@ -100,7 +108,7 @@ Seleccione una opción:
             try:
                 monto_retirar = int(input("\nIngrese el monto a retirar: "))
                 while monto_retirar <= 0:
-                    monto_retirar = int(input("El monto a retirar debe ser mayor que cero.Ingrese un nuevo monto: "))
+                    monto_retirar = int(input("El monto a retirar debe ser mayor que cero. Ingrese un nuevo monto: "))
 
                 if monto_retirar > saldo:   
                     print("✗ Fondos insuficientes.saldo actual: ", saldo)
@@ -130,7 +138,7 @@ Seleccione una opción:
                 try:
                     cantidad = int(input("Ingrese la cantidad a depositar: "))
                     def VALIDACION_DEPOSITO(monto):
-                            if monto <= 0: #-----------------------------------------------------------> AQUI NO ENTRA
+                            if monto <= 0: #-----------------------------------------------------------> AQUI NO ENTRA Y NO SE COMO FUNCIONA ESO
                                 return False, "No se permiten montos negativos o cero"
                             return True, "Depòsito Valido!."
                     saldo = saldo + cantidad
