@@ -19,7 +19,7 @@ for _ in welcome:
     sleep(0.005)
 
 saldo =  1000
-pint_correcto = 1234
+pin_correcto = 1234
 intentos_maximos = 3 
 sesion_activa = False
 intentos = 0 
@@ -28,15 +28,12 @@ limite_diario_retiro=800
 retiro_diario=0
 monto = 0
 historial = ""
+max_intentos = 3
 cuenta_1 = input("🤵 Ingrese su Nombre de Usuario: ")
 
-"""Feature: Athentication Process
-Made by: Oscar Corzo
+"""Feature: Athentication Process and Attempts Control
+Made by: Oscar Corzo y Valery Avila
 Date: 2026-03-05"""
-
-pin_correcto = 1234
-intentos = 0
-max_intentos = 3
 
 while intentos < max_intentos:
     try:
