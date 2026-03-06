@@ -47,7 +47,7 @@ while intentos < max_intentos:
             print("="*60)
             break
         else:
-            intentos += 0
+            
             max_intentos -= 1
             print ("="*60)
             print(f"PIN incorrecto. Inténtelo de nuevo.".center(60))
