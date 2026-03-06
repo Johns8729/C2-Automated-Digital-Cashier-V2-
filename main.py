@@ -48,7 +48,7 @@ while intentos < max_intentos:
             break
         else:
             
-            max_intentos -= 1
+            max_intentos -= 1  # bug corregido BY: JOSEPH ROMERO - el codigo original tenia "intentos += 0" lo cual nunca sumaba al contador generando un bucle infinito. Se elimino la linea redundante
             print ("="*60)
             print(f"PIN incorrecto. Inténtelo de nuevo.".center(60))
             print (f"Tienes {max_intentos} intentos disponibles".center(60))
