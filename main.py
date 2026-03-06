@@ -9,4 +9,4 @@
                 print("\nGracias por usar el cajero automático")
                 break
             except ValueError:
-                print("Error: Debe ingresar un número entero válido.")
+                print("Error: Ingrese un número entero válido.")
