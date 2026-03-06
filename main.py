@@ -100,7 +100,12 @@ if Opcion == 2:
     while True:    
         try:
             monto_retirar = int(input("\nIngrese el monto a retirar: "))
+            while monto_retirar <= 0:
+                 monto_retirar = int(input("El monto a retirar debe ser mayor que cero.Ingrese un nuevo monto: "))
 
+            if monto_retirar > saldo:   
+                print("✗ Fondos insuficientes.saldo actual: ", saldo)
+                continue
               
             if retiro_diario+monto_retirar > limite_diario_retiro:
                    disponible = limite_diario_retiro-retiro_diario
@@ -125,6 +130,10 @@ elif Opcion == 3:
         while True:
             try:
                 cantidad = int(input("Ingrese la cantidad a depositar: "))
+                def VALIDACION_DEPOSITO(monto):
+                        if monto <= 0:
+                            return False, "No se permiten montos negativos o cero"
+                        return True, "Depòsito Valido!."
                 saldo = saldo + cantidad
                 historial = historial + "💰 Depósito de $" + str(cantidad) + "\n"
                 print(f"\nSu nuevo saldo es de: ${saldo}")
@@ -132,3 +141,4 @@ elif Opcion == 3:
                 break
             except ValueError:
                 print("Error: Ingrese un número entero válido.")
+
