@@ -149,7 +149,7 @@ Seleccione una opción:
                     print("-"*60)
                     cantidad = int(input("Ingrese la cantidad a depositar: "))
                     
-                    if cantidad < 0:
+                    if cantidad < 1:
                          print("Error: Ingrese un valor positivo.")
                          continue
 
